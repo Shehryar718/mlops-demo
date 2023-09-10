@@ -1,5 +1,5 @@
 # Import the Note class from your module
-from note import Note
+from main import Note
 
 def test_note_creation():
     # Create a new note
