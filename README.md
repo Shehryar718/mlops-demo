@@ -17,10 +17,6 @@
 
 - [Example](#example)
 
-- [Contributing](#contributing)
-
-- [License](#license)
-
 ## Introduction
 
 The `Note` class is a simple Python class that represents a note with a title and content. This README provides an overview of the class and instructions on how to use it in your Python projects.
