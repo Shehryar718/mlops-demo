@@ -1,0 +1,8 @@
+# This requirements.txt file is for the CI/CD pipeline in GitHub Actions.
+# It includes dependencies required for linting and testing.
+
+# flake8 for linting
+flake8==4.0.1
+
+# pytest for testing
+pytest==6.2.5
