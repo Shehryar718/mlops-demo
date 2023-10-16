@@ -2,18 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-        stage('Checking python') {
-            steps {
-                sh 'whereis python'
-            }
-        }
         stage('Python Linting') {
             steps {
+                tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation' // Use the name of your Python tool installation
                 sh '''
                     python -m pip install --upgrade pip
                     pip install flake8 pytest
@@ -26,9 +17,7 @@ pipeline {
 
         stage('Python Testing') {
             steps {
-                sh 'python -m pip install --upgrade pip'
-                sh 'pip install flake8 pytest'
-                sh 'if [ -f requirements.txt ]; then pip install -r requirements.txt; fi'
+                tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation' // Use the name of your Python tool installation
                 sh 'make test'
             }
         }
