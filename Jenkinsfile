@@ -5,7 +5,7 @@ pipeline {
         stage('Python Linting') {
             steps {
                 sh '''
-                    /usr/local/bin/python3.8 -m pip install --upgrade pip
+                    /Users/shehryarsohail-nu/anaconda3/bin/python -m pip install --upgrade pip
                     pip install flake8 pytest
                     if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
                     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
