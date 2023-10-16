@@ -1,0 +1,17 @@
+
+name: Jenkins Build Trigger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Jenkins Build
+        run: |
+          curl -X POST https://676a-39-38-247-50.ngrok-free.app/job/Jenkins-demo/build \
+          -u ${{ secrets.JENKINS_USERNAME }}:${{ secrets.JENKINS_API_TOKEN }}
