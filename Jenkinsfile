@@ -4,9 +4,8 @@ pipeline {
     stages {
         stage('Python Linting') {
             steps {
-                tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation'
                 sh '''
-                    python -m pip install --upgrade pip
+                    /usr/local/bin/python3.8 -m pip install --upgrade pip
                     pip install flake8 pytest
                     if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
                     flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -15,12 +14,11 @@ pipeline {
             }
         }
 
-        // stage('Python Testing') {
-        //     steps {
-        //         tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation'
-        //         sh 'pytest test.py'
-        //     }
-        // }
+        stage('Python Testing') {
+            steps {
+                sh 'pytest test.py'
+            }
+        }
     }
 
     post {
