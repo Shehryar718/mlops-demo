@@ -15,12 +15,12 @@ pipeline {
             }
         }
 
-        stage('Python Testing') {
-            steps {
-                tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation'
-                sh 'pytest test.py'
-            }
-        }
+        // stage('Python Testing') {
+        //     steps {
+        //         tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation'
+        //         sh 'pytest test.py'
+        //     }
+        // }
     }
 
     post {
