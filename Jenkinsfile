@@ -14,7 +14,7 @@ pipeline {
 
         stage('Python Testing') {
             steps {
-                sh 'pytest test.py'
+                sh '/Users/shehryarsohail-nu/anaconda3/envs/myenv/bin/pytest test.py'
             }
         }
     }
