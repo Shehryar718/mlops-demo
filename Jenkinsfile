@@ -7,7 +7,11 @@ pipeline {
                 checkout scm
             }
         }
-
+        stage('Checking python') {
+            steps {
+                sh 'whereis python'
+            }
+        }
         stage('Python Linting') {
             steps {
                 sh '''
