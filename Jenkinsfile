@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Setting up python') {
-            steps {
-                sh '/Users/shehryarsohail-nu/anaconda3/condabin/conda activate myenv'
-            }
-        }
         stage('Python Linting') {
             steps {
                 sh '''
