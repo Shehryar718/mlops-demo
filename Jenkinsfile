@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Python Linting') {
             steps {
-                tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation' // Use the name of your Python tool installation
+                tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation'
                 sh '''
                     python -m pip install --upgrade pip
                     pip install flake8 pytest
@@ -17,8 +17,8 @@ pipeline {
 
         stage('Python Testing') {
             steps {
-                tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation' // Use the name of your Python tool installation
-                sh 'make test'
+                tool name: 'Python 3.8', type: 'hudson.plugins.python.PythonInstallation'
+                sh 'pytest test.py'
             }
         }
     }
