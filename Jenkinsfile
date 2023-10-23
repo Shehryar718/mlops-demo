@@ -17,14 +17,14 @@ pipeline {
                 sh '/Users/shehryarsohail-nu/anaconda3/envs/myenv/bin/pytest test.py'
             }
         }
-
         stage('Deploy') {
-            def branch_name = "PROD"
-            script{
-                if (branch_name == "PROD") {
-                    println "Deploying to production."
-                } else if (branch_name == "TEST") {
-                    println "Deploying to testing."
+            steps {
+                script{
+                    if (branch_name == "PROD") {
+                        println "Deploying to production."
+                    } else if (branch_name == "TEST") {
+                        println "Deploying to testing."
+                    }
                 }
             }
         }
